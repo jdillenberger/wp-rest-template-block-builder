@@ -17,8 +17,8 @@ You'll have to figure out how to build it on Windows yourself, but that shouldn'
 Clone this repository and execute `build.sh` to build an installable zip-file.
 
 ```sh
-git clone git@github.com:jdillenberger/wp-mintfit.git
-cd ./wp-mintfit
+git clone https://github.com/jdillenberger/wp-rest-template-block-builder
+cd ./wp-rest-template-block-builder
 bash ./build.sh
 ```
 
