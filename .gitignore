@@ -1,0 +1,22 @@
+# Ignore everything, but descend into most directories
+*
+!*/
+jsdist/
+node_modules/
+
+# Do not ignore these file extensions
+!*.php
+!*.vue
+!*.js
+!*.md
+!*.css
+
+# Furthermore do not ignore those specific files
+!.gitignore
+!package.json
+!package-lock.json
+!webpack.config.js
+!build.sh
+!LICENSE
+!Vagrantfile
+!install-vagrant.sh
