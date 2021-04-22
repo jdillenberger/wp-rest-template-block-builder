@@ -3,6 +3,11 @@
 The `wp-rest-template-block-builder` enables you to create custom Gutenberg blocks, which can use data they get from a REST API.
 To create new blocks the [Vue.js Template Syntax](https://vuejs.org/v2/guide/syntax.html) is used.
 
+> This plugin was not intended to work with APIs that need a REST-API key. If you need that - you need another plugin.
+ 
+There are similar WordPress plugins that offer more features than the `wp-rest-template-block-builder`. 
+But at the time of writing, these plugins lack support for WordPress nonces and are quite resource intensive.
+If these issues do not bother you - you may want to consider using those other solutions - since they support requests using API-keys which are needed for many external APIs. 
 
 ## Table of Contents
 
