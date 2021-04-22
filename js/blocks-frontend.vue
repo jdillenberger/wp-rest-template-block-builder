@@ -1,6 +1,6 @@
 <template>
   <div v-if="ready">
-      <v-runtime-template :template="blockContent"></v-runtime-template>
+      <v-runtime-template :template="'<div>' + blockContent + '</div>'"></v-runtime-template>
   </div>
 </template>
 
@@ -77,7 +77,7 @@ export default {
       return true
 
     }
-  }
+  } 
 
 }
 </script>
