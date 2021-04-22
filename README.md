@@ -1,5 +1,9 @@
 # wp-rest-template-block-builder
 
+The `wp-rest-template-block-builder` enables you to create custom Gutenberg blocks, which can use data they get from a REST API.
+To create new blocks the [Vue.js Template Syntax](https://vuejs.org/v2/guide/syntax.html) is used.
+
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -26,9 +30,32 @@ You can now upload the installable zip-archive in WordPress admin to install and
 
 ## Usage
 
-### Admin Sections
+### Create new Blocks
 
-### Gutenberg Blocks
+After the plugin is installed and activated. You can start by creating a new block. Select `REST-Blocks` > `New Block` via the main admin menu in WordPress.  
+
+![Admin Interface to create a new Block](https://cloud.jandillenberger.com/index.php/apps/files_sharing/publicpreview/bsmrk2WGbKqg6FH?fileId=5912&file=/new-block.png&x=2560&y=1440&a=true)
+
+There you can choose a `Block Title`, which you can later use to identify the block inside the Gutenberg Editor.
+After that use the `Use Apis` field to specify the number of APIs you want to query for your block.
+Then you can start to configure each API. Enter an `API Name` the `API URL` and if used the [Nonce](https://codex.wordpress.org/WordPress_Nonces) name you need for that request.
+Each API you entered will be shown on the right side of the block content editor.
+
+Now you can use this data to create your block. Each specified API will be available as a variable in your template matching the `API Name` used for that API.
+The Template Language used to create the blocks is the [Vue.js Template Syntax](https://vuejs.org/v2/guide/syntax.html). 
+
+Furthermore the `All Blocks` Section enables you to get an overview over all the blocks.
+
+![Admin Interface to list all existing Blocks](https://cloud.jandillenberger.com/index.php/apps/files_sharing/publicpreview/bsmrk2WGbKqg6FH?fileId=5910&file=/all-blocks.png&x=2560&y=1440&a=true)
+
+### Use Blocks in Gutenberg
+
+When the block is created. It can be used inside of the `Gutenberg Editor` (the default WordPress page/post editor). 
+Seach the available blocks for a `REST Template Block` and select it.
+The block provides a select box which you can use to select the `Block Title` you used for your block.
+Now just save your page or post and view the post to examine it on your page. 
+
+![Gutenberg REST Template Block](https://cloud.jandillenberger.com/index.php/apps/files_sharing/publicpreview/bsmrk2WGbKqg6FH?fileId=5938&file=/gutenberg-block.png&x=2560&y=1440&a=true)
 
 ## Development
 
