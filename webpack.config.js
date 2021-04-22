@@ -4,7 +4,9 @@ const {
 } = require('vue-loader')
 
 let scripts = {
-    'admin.js': './js/admin.js'
+    'admin.js': './js/admin.vue.jsx',
+    'blocks-backend.js': './js/blocks-backend.jsx',
+    'blocks-frontend.js': './js/blocks-frontend.vue.jsx',
 }
 
 module.exports = {
@@ -19,7 +21,8 @@ module.exports = {
     resolve: {
         alias: {
             vuejs: path.resolve(__dirname, 'node_modules', 'vue', 'dist', 'vue.esm.js'),
-            'vue-wp-list-table': path.resolve(__dirname, 'node_modules', 'vue-wp-list-table', 'dist', 'vue-wp-list-table.browser.js', )
+            'vue-wp-list-table': path.resolve(__dirname, 'node_modules', 'vue-wp-list-table', 'dist', 'vue-wp-list-table.browser.js', ),
+            'vue-json-tree-viewer': path.resolve(__dirname, 'node_modules', 'vue-json-tree-viewer', 'dist', 'index.js', )
         }
     },
     module: {
@@ -29,9 +32,27 @@ module.exports = {
                 exclude: "/node_modules/"
             },
             {
-                test: /\.js$/,
+                test: /\.vue\.jsx?$/,
                 loader: "babel-loader",
-                exclude: "/node_modules/"
+                exclude: ["/node_modules/"],
+                options: {
+                    presets: [
+                        "@babel/preset-env",
+                        "@babel/preset-react",
+                        "@vue/babel-preset-jsx"
+                    ]
+                }
+            },
+            {
+                test: /^[^\.]*\.jsx$/,
+                loader: "babel-loader",
+                exclude: ["/node_modules/"],
+                options: {
+                    presets: [
+                        "@babel/preset-env",
+                        "@babel/preset-react"
+                    ]
+                }
             },
             {
                 test: /\.css$/,

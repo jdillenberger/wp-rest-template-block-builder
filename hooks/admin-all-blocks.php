@@ -10,10 +10,11 @@ add_action('rest-blocks-all-blocks-admin-page', function(){
         'restBlocksURL' => plugin_dir_url(RB_PLUGIN_INDEX),
     ]);
 
-    wp_localize_script('rest-blocks-all-blocks-js', 'nonce', [wp_create_nonce('wp_rest')]);
+    wp_localize_script('rest-blocks-all-blocks-js', 'section', 'allBlocks');
 
-    ?>
-    <!-- ADD COMPONENT LOADER HERE -->
-    <?php
+    wp_localize_script('rest-blocks-all-blocks-js', 'nonce', [wp_create_nonce('wp_rest')]);
+    
+    echo '<div class="rest-blocks-admin"></div>';
+    
 
 });

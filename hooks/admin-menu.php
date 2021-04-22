@@ -6,9 +6,9 @@ add_action('admin_menu', function () {
     add_menu_page(
         __('REST-Blocks', 'rest-blocks'),
         __('REST-Blocks', 'rest-blocks'),
-        'rest-blocks-all',
+        'manage_options',
         'rest-blocks',
-        function () {},
+        function () { },
         'dashicons-text-page',
         17
     );
@@ -18,7 +18,7 @@ add_action('admin_menu', function () {
         'rest-blocks',
         __('All Blocks', 'rest-blocks'),
         __('All Blocks', 'rest-blocks'),
-        'rest-blocks-all',
+        'manage_options',
         'rest-blocks',
         function () {
             do_action('rest-blocks-all-blocks-admin-page');
@@ -30,7 +30,7 @@ add_action('admin_menu', function () {
         'rest-blocks',
         __('New Block', 'rest-blocks'),
         __('New Block', 'rest-blocks'),
-        'rest-blocks-new',
+        'manage_options',
         'rest-blocks-new',
         function () {
             do_action('rest-blocks-new-block-admin-page');

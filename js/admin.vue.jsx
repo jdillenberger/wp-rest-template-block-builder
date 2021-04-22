@@ -19,14 +19,28 @@ document.addEventListener('DOMContentLoaded', function() {
                     'X-WP-Nonce': nonce
                 },
             }),
+            section: section
         },
         mounted() {
-
-
+            
         },
         methods: {
 
+        },
+        render: function(h) {
+            switch (this.section) {
+                case 'allBlocks':
+                    return <admin-all-blocks />
+                case 'newBlock':
+                    return <admin-new-block />
+                default:
+                    return <p><strong>ERROR:</strong> There is no section defined.</p>
+
+            }
+        
+
+            
         }
-    })
+    }) 
 
 })

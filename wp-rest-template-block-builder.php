@@ -16,6 +16,12 @@ include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/activation.php';
 include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/admin-all-blocks.php';
 include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/admin-menu.php';
 include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/admin-new-block.php';
+include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/blocks.php';
 
 
-
+include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/rest-endpoints.php';
+include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/rest-delete-block.php';
+include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/rest-get-blocks.php';
+include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/rest-get-block.php';
+include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/rest-post-block.php';
+include plugin_dir_path(RB_PLUGIN_INDEX) . 'hooks/rest-put-block.php';
