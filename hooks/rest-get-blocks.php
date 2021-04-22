@@ -11,7 +11,7 @@ add_filter('rest-template-block-builder-get-blocks', function ($atts) {
         return [
             'id' => $row['id'],
             'title' => $row['title'],
-            'apis' => $apis,
+            'apis' => is_array($apis) ? $apis : [],
             'num_apis' => count($apis),
             'content' => $row['title']
         ];

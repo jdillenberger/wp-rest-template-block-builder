@@ -30,3 +30,7 @@ add_action('enqueue_block_assets', function(){
 
     
 });
+
+add_action('wp_enqueue_scripts', function(){
+    wp_enqueue_script('rest-blocks-gutenberg-blocks-frontend-js', plugin_dir_url(RB_PLUGIN_INDEX) . 'jsdist/blocks-frontend.js', [], false, true);
+});

@@ -31,8 +31,12 @@ registerBlockType(`rest-template-block-builder/${blockName}`, {
         return <div style={{padding: '1rem'}}>
                     <h3>REST Template Block</h3>
                     <select style={{minWidth: '30rem'}} onChange={ updateAttribute } value={ attributes.id } >
-                        {blocks.map(block => {
-                            return <option value={block.id}>{block.id} - {block.title}</option>
+                        
+                        {[undefined, ...blocks].map((block, index) => {
+                            if (block == undefined) {
+                                return <option selected disabled value={block} style={{textAlign: 'center'}}> -- Select REST-Block -- </option>
+                            }
+                            return <option selected={index==0} value={block.id}>{block.id} - {block.title}</option>
                         })}
                     </select>
                 </div>
@@ -40,7 +44,7 @@ registerBlockType(`rest-template-block-builder/${blockName}`, {
 
     },
     save: ( { attributes } ) => {
-        return <div class="rest-blocks-frontend"><rest-template-block id={attributes.id} /></div>
+        return <div class="rest-blocks-frontend" id={ `rest-blocks-frontend-${attributes.id}` }><rest-template-block block-id={attributes.id} /></div>
     }
 })
 
